@@ -1,0 +1,193 @@
+/* 全局清除默认边距（必须加，不然页面会有白边） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 你原来的导航栏样式（我优化了布局 + 居中） */
+ul {
+  list-style-type: none;
+  margin: 15px auto;
+  padding: 0;
+  width: 96%;         /* 让导航不顶满屏幕，更精致 */
+  max-width: 1400px;  /* 超大屏也不会变形 */
+
+  /* 新增：弹性布局，永远不换行 */
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  /* 你原来的圆角 */
+  border-radius: 12px;
+
+  /* 你原来的蔚蓝主题色 */
+  background-color: #4570cc;
+
+  /* 你原来的阴影 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+li {
+  /* 删掉了 float: left，彻底解决换行！ */
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* 你原来的鼠标悬浮效果（完全保留） */
+li a:hover {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 8px;
+}
+
+/* 你原来的 LOGO 样式（保留） */
+.logo img {
+  height: 36px;
+  vertical-align: middle;
+}
+
+/* 你原来的背景色（保留） */
+body {
+  background-color: #8384da;
+}
+
+/* ======================== */
+/* 我帮你加的：轮播图样式（完美配合你的页面） */
+/* ======================== */
+.banner {
+  width: 96%;
+  max-width: 1400px;
+  height: 400px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.banner-img-box {
+  height: 100%;
+  display: flex;
+  transition: 0.4s ease;
+  flex-wrap: nowrap;
+}
+
+.banner-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* 左右切换按钮样式（和你网站风格统一） */
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: #4570cc;
+}
+
+/* 👇 下面是我新增的小圆点样式（必须加） */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+.gohr{
+  color: #0846cc;
+  font-size: 30px;
+  text-align: left;
+  padding: 5px 20px;
+}
+
+/* ========== 页脚样式（和你网站风格100%匹配） ========== */
+.site-footer {
+  width: 96%;
+  max-width: 1400px;
+  margin: 40px auto 20px;
+  padding: 20px;
+  background-color: #4570cc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-outer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a,
+.footer-outer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.footer-links a:hover,
+.footer-outer-links a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+.footer-copyright {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  margin-top: 10px;
+}
